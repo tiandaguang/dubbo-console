@@ -38,3 +38,11 @@ TestRegistryService 接口 以jar包引入 使用maven方便消费者和 提供�
 暴漏的接口在spRedis中
 
 使用maven管理 方便 多个项目进行引用
+
+
+dubbo xml报错 是缺少xsd
+从github下载dubbo后 一般 xsd就放在
+dubbo\dubbo-config\dubbo-config-spring\target\classes\META-INF 下面
+选择windows-->preferrence-->xml->xmlcatalog-->add->catalog entry -->file system,
+选择模版文件后，修改key值为“http://code.alibabatech.com/schema/dubbo/dubbo.xsd”，
+然后在eclipse中文件报错处点击右键“validate”。
