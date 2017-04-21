@@ -25,8 +25,17 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 	<dubbo:application name="dubbo_consumer"></dubbo:application>
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
 	<dubbo:registry address="zookeeper://192.168.20.110:2181"
-		check="false"/>
+		check="false" />
 	<!-- 要引用的服务 -->
 	<dubbo:reference interface="com.sys.cache.TestRegistryService"
-		id="testRegistryService" />
+		id="testRegistryService" >
+		<dubbo:method name="hello" timeout="4000"/>	
+		<dubbo:parameter key="name" value="tianda"/>
+	</dubbo:reference>
+	<dubbo:reference id="fooService" interface="com.alibaba.foo.FooService">
+		<dubbo:method name="findFoo" async="true" />
+	</dubbo:reference>
+	<dubbo:reference id="barService" interface="com.alibaba.bar.BarService">
+		<dubbo:method name="findBar" async="true" />
+	</dubbo:reference>
 </beans>

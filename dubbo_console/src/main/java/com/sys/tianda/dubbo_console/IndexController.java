@@ -12,14 +12,13 @@ import com.sys.cache.TestRegistryService;
 public class IndexController {
 
 	@Autowired
-	private TestRegistryService testRegistryService;
+	private TestRegistryService testRegistryServiceImpl;
 
 	@RequestMapping("/hello")
 	public ModelAndView index(Model model) {
-		String message = testRegistryService.hello("dubbo");
+		String message = testRegistryServiceImpl.hello("dubbo");
 		ModelAndView mv = new ModelAndView("helloDubbo");// 指定视图
 		mv.addObject("message", message);
 		return mv;
 	}
-
 }
