@@ -19,6 +19,20 @@ TestRegistryService 接口 以jar包引入 使用maven方便消费者和 提供�
   </exclusions>  
 </dependency>  
 
+配置maven默认jdk
+<profile>    
+        <id>jdk-1.6</id>    
+        <activation>    
+            <activeByDefault>true</activeByDefault>    
+            <jdk>1.6</jdk>    
+        </activation>    
+        <properties>    
+            <maven.compiler.source>1.6</maven.compiler.source>    
+            <maven.compiler.target>1.6</maven.compiler.target>    
+            <maven.compiler.compilerVersion>1.6</maven.compiler.compilerVersion>    
+        </properties>    
+    </profile>
+
 
 
 暴漏的接口在spRedis中
