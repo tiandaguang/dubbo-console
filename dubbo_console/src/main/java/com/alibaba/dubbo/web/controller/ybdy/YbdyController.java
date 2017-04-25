@@ -1,4 +1,4 @@
-package com.sys.tianda.dubbo_console;
+package com.alibaba.dubbo.web.controller.ybdy;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.bar.BarService;
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.alibaba.foo.FooService;
-import com.sys.cache.TestRegistryService;
+import com.alibaba.registry.TestRegistryService;
 
 @Controller
 public class YbdyController {
