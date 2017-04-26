@@ -39,4 +39,7 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 	<!-- 参数验证 -->
 	<dubbo:reference id="validationService" interface="com.alibaba.validation.ValidationService"
 		validation="true" />
+
+	<!-- 参数回调 -->
+	<dubbo:reference id="callbackService" interface="com.alibaba.call.CallbackService" />
 </beans>
