@@ -42,4 +42,9 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 	<!-- 参数回调 -->
 	<dubbo:reference id="callbackService" interface="com.alibaba.call.CallbackService" />
+	<!-- 事件通知:远程调用之后对于结果进行通知-->
+	<bean id="demoCallback" class="com.alibaba.dubbo.enterprise.impl.NofifyImpl" />
+	<dubbo:reference id="demoService" interface="com.alibaba.notice.IDemoService" version="1.0.0" group="cn">
+		<dubbo:method name="get" async="false"  onreturn="demoCallback.onreturn" onthrow="demoCallback.onthrow" />
+	</dubbo:reference>
 </beans>
